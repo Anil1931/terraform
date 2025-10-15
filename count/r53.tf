@@ -1,7 +1,7 @@
 resource "aws_route53_record" "roboshop" {
-    count = 4
+    count = 10
   zone_id = var.zone_id
-  name    = "${var.instances[count.index]}.${var.domain_name}"
+  name    = "${var.instances[count.index]}.${var.domain_name}"  #mongodb.hansh123.online
   type    = "A"
   ttl     = 1
   records = [aws_instance.terraform[count.index].private_ip]
